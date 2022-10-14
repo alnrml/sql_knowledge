@@ -1,0 +1,26 @@
+-- MY SQL KNOWLEDGE (UNDER CREATION)
+-- MEU CONHECIMENTO EM SQL (EM CONSTRUÇÃO)
+
+-- #1 database creation			-- #1 criação da base de dados
+
+CREATE DATABASE MOVIES_DB
+
+-- #2 The database tables were input through csv files, you can download the files in order to know its content
+-- #2 As tabelas foram inseridas na base de dados por meio de arquivos no formato csv, você pode fazer o download desses arquivos para conhecer o conteúdo
+
+-- #3 Specifies the database being used		-- #3 Especifica a base de dados que está sendo usada
+
+USE MOVIES_DB
+
+-- #4 gets full content from the tables		-- #4 seleciona o conteúdo total das tabelas
+
+SELECT * FROM movies;
+
+SELECT * FROM ratings;
+
+-- #5 Through the query bellow we are able to see the movie title along with its rating, two tables are joined
+-- #6 A query abaixo nos apresenta o título do filme e a sua nota, duas tabelas são conectadas
+
+SELECT movies.title, ratings.rating
+FROM movies
+INNER JOIN ratings ON movies.movieId = ratings.movieId;
