@@ -121,89 +121,10 @@ FROM movies
 INNER JOIN ratings ON movies.movieId = ratings.movieId
 WHERE title IN ('Top Gun (1986)')
 ORDER BY title ASC;
-                                                            
 
+                                                            -- #18 BETWEEN - Selects values within a given range. The values can be numbers, text, or dates.
+                                                            -- #18 BETWEEN - Seleciona valores dentro de uma série de valores. Os valores podem ser números, texto ou datas.
                                                             
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-                                                            
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
+SELECT *
+FROM MOVIES
+WHERE movieId BETWEEN 542 AND 552
