@@ -1,26 +1,62 @@
 -- MY SQL KNOWLEDGE (UNDER CREATION)
 -- MEU CONHECIMENTO EM SQL (EM CONSTRUÇÃO)
 
--- #1 database creation			-- #1 criação da base de dados
+                                                            -- #1 database creation			-- #1 criação da base de dados
 
 CREATE DATABASE MOVIES_DB
 
--- #2 The database tables were input through csv files, you can download the files in order to know its content
--- #2 As tabelas foram inseridas na base de dados por meio de arquivos no formato csv, você pode fazer o download desses arquivos para conhecer o conteúdo
+                                                            -- #2 The database tables were input through csv files, you can download the files in order to know its content
+                                                            -- #2 As tabelas foram inseridas na base de dados por meio de arquivos no formato csv, você pode fazer o download desses arquivos para conhecer o conteúdo
 
--- #3 Specifies the database being used		-- #3 Especifica a base de dados que está sendo usada
+                                                            -- #3 Specifies the database being used		-- #3 Especifica a base de dados que está sendo usada
 
 USE MOVIES_DB
 
--- #4 gets full content from the tables		-- #4 seleciona o conteúdo total das tabelas
+                                                            -- #4 gets full content from the tables		-- #4 seleciona o conteúdo total das tabelas
 
 SELECT * FROM movies;
 
 SELECT * FROM ratings;
 
--- #5 Through the query bellow we are able to see the movie title along with its rating, two tables are joined
--- #6 A query abaixo nos apresenta o título do filme e a sua nota, duas tabelas são conectadas
+                                                            -- #5 Through the query bellow we are able to see the movie title along with its rating, two tables are joined
+                                                            -- #6 A query abaixo nos apresenta o título do filme e a sua nota, duas tabelas são conectadas
 
 SELECT movies.title, ratings.rating
 FROM movies
 INNER JOIN ratings ON movies.movieId = ratings.movieId;
+
+                                                            -- #7 SELECT DISTINCT - Used to select only different values.
+                                                            -- #7 SELECT DISTINCT - Usado para selecionar apenas valores diferentes.
+                                                            
+SELECT DISTINCT movies.title, ratings.rating
+FROM movies
+INNER JOIN ratings ON movies.movieId = ratings.movieId
+WHERE rating = 10
+
+                                                            -- #8 AND/OR - Used to filter records based on more than one condition, the AND operator displays a record if all conditions are true, the OR operator displays a record if any of the conditions separated by OR are true.  
+                                                            -- #8 AND/OR - São usados para filtrar dados baseados em mais de uma condição. AND apresenta os dados se todas as condições forem verdadeiras. OR apresenta dos dados se pelo menos uma das condições separadas por OR forem verdadeiras.
+                                                            
+SELECT DISTINCT movies.title, ratings.rating
+FROM movies
+INNER JOIN ratings ON movies.movieId = ratings.movieId
+WHERE rating = 10 AND title = 'Fair Game (1995)'
+                                                            
+SELECT DISTINCT movies.title, ratings.rating
+FROM movies
+INNER JOIN ratings ON movies.movieId = ratings.movieId
+WHERE rating = 10 OR rating = 30
+
+                                                            -- #9 ORDER BY - Used to sort the result-set in ascending or descending order.
+                                                            -- #9 ORDER BY - Usado para apresentar os dados em ordem crescente ou decrescente.
+
+SELECT DISTINCT movies.title, ratings.rating
+FROM movies
+INNER JOIN ratings ON movies.movieId = ratings.movieId
+WHERE rating = 10
+ORDER BY title ASC;
+
+SELECT DISTINCT movies.title, ratings.rating
+FROM movies
+INNER JOIN ratings ON movies.movieId = ratings.movieId
+WHERE rating = 10
+ORDER BY title DESC;
