@@ -1,5 +1,5 @@
--- MY SQL KNOWLEDGE (UNDER CREATION)
--- MEU CONHECIMENTO EM SQL (EM CONSTRUÇÃO)
+                                                            -- MY SQL KNOWLEDGE (UNDER CREATION)
+                                                            -- MEU CONHECIMENTO EM SQL (EM CONSTRUÇÃO)
 
                                                             -- #1 database creation			-- #1 criação da base de dados
 
@@ -60,3 +60,150 @@ FROM movies
 INNER JOIN ratings ON movies.movieId = ratings.movieId
 WHERE rating = 10
 ORDER BY title DESC;
+
+                                                            -- #10 SELECT TOP - Used to specify the number of records to return
+                                                            -- #10 SELECT TOP - Usado para especificar o número de registros que a query retornará
+                                                          
+SELECT TOP 10 movies.title, ratings.rating
+FROM movies
+INNER JOIN ratings ON movies.movieId = ratings.movieId
+WHERE rating = 10
+ORDER BY title ASC;
+
+                                                            -- #11 MIN() - Returns the smallest value of the selected column
+                                                            -- #11 MIN() - Retorna o menor valor da coluna selecionada
+                                                            
+SELECT MIN(rating) AS ratings, movies.title
+FROM ratings
+INNER JOIN movies ON ratings.movieId = ratings.movieId
+GROUP BY title;
+
+                                                            -- #12 MAX() - Returns the largest value of the selected column
+                                                            -- #12 MAX() - Retorna o maior valor da coluna selecionada
+                                                            
+SELECT MAX(rating) AS ratings, movies.title
+FROM ratings
+INNER JOIN movies ON ratings.movieId = ratings.movieId
+GROUP BY title;
+
+                                                            -- #13 COUNT() - Returns the number of rows that matches a specified criterion. Through this method we were able to know the total amount of movies in the database, 9742.
+                                                            -- #13 COUNT() - Retorna o número de linhas que combina com um critério específico. Através deste método foi possível saber o total de filmes na base de dados, 9742.
+                                                            
+SELECT DISTINCT COUNT(TITLE)                                
+FROM movies;
+
+                                                            -- #14 AVG() - Returns the average value of a numeric column. In the example below it was returned the avarage rating from the toy story movie.
+                                                            -- #14 AVG() - Retorna o valor médio de uma coluna numérica. No exemplo abaixo foi retornado a nota média do filme toy story.
+                                                            
+SELECT AVG(rating)
+FROM ratings
+WHERE movieId = 1
+
+                                                            -- #15 SUM() - Returns the total sum of a numeric column. 
+                                                            -- #15 SUM() - Retorna a soma total de uma coluna numérica.
+                                                            
+SELECT SUM(rating)
+FROM ratings
+WHERE movieId = 1
+
+                                                            -- #16 LIKE - Used in a WHERE clause to search for a specified pattern in a column.
+                                                            -- #16 LIKE - Usado no filtro WHERE para procurar um padrão específico na coluna.
+                                                            
+SELECT *
+FROM movies
+WHERE TITLE LIKE '%top%'
+
+                                                            -- #17 IN - Allows to specify multiple values in a WHERE clause. The query below, for instance, returns all ratings given to the top gun movie.
+                                                            -- #17 IN - Permite especificar multiplos valores in um filtro WHERE. A query abaixo, por exemplo, retorna todas as notas dadas para o filme top gun.
+                                                            
+SELECT ratings.rating, movies.title
+FROM movies
+INNER JOIN ratings ON movies.movieId = ratings.movieId
+WHERE title IN ('Top Gun (1986)')
+ORDER BY title ASC;
+                                                            
+
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+                                                            
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
